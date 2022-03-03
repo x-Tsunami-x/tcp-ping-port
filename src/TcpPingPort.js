@@ -32,7 +32,7 @@ const DEFAULT_TIME_OUT = 3000 // 3sec
  * // returns true when host is online and it is resoled in less than 200ms
  * const online = await tcpPingPort('google.com', 80, {dnsTimeout: 200});
  */
-exports.tcpPingPort = (host, port = 80, options = null, resolver = null) => {
+exports.tcpPingPort = (host, port, options = null, resolver = null) => {
     const destroyTime = (options && options.socketTimeout) || DEFAULT_TIME_OUT
     const resolverOptions = options &&
         {
